@@ -1,0 +1,13 @@
+inter: (inter)        
+interview: (interview)        
+internally: (inter(view)(nally))        
+a: (inter(view)(nally))(a)        
+all: (inter(view)(nally))(all)        
+web: (inter(view)(nally))(all)(web)        
+world: (inter(view)(nally))(all)((w(eb)(orld)))        
+inter: yes 
+all: yes 
+al: no 
+algorithm: no 
+w: no 
+interney : no 
