@@ -60,7 +60,7 @@ static boolean[][] subset = null;
        }
 
   }
-  //funnet på gekkesforgeeks (bare makeBoolArray)
+  
   public static boolean[][] makeBoolArray(Integer[] set, Integer n,Integer sum){
 
 
