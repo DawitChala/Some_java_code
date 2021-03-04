@@ -21,9 +21,9 @@ class A1_paper{
 
 
     static int try_diffrent_variants(int[] paper){
-        float even_total = 594;
-        int odd_total = 1189;
-        double tape = 0.0;
+        float even_total = (float) 594.5;
+        float odd_total = 841;
+        float tape = (float) 0.0;
         if(paper[0] > 2){
             System.out.println("riktig");
             return 0;
@@ -36,16 +36,60 @@ class A1_paper{
                 paper[i]-=2;
                 antall = paper[i];
                 paper[indeks]++;
+                if(i%2==0){
+                    if(i == 2){
+                        tape+=even_total/2;
+                        System.out.println("teipet even = " + (even_total/2));
+                    }
+                    else{
+                        int to_the_power_of = i/2;
+                        tape+= even_total/Math.pow(to_the_power_of,2);
+                        System.out.println("teipet even " + (even_total/Math.pow(to_the_power_of,2)));
+                    }
+                }else{
+                    if(i==1){
+                        tape += odd_total/2;
+                        System.out.println("teipet odd" + (odd_total/2));
+                    }
+                    else {
+                        int to_the_power_of = i+1/2;
+                        tape+= odd_total/Math.pow(to_the_power_of,2);
+                        System.out.println("teipet odd" +  (odd_total/Math.pow(to_the_power_of,2)));
+                    }
+
+                }
+
                 
                 int ny_indeks = indeks ;
                 int old_val = paper[ny_indeks];
 
                 while(old_val>=2 && ny_indeks>0){
                     paper[ny_indeks]-=2;
-                    System.out.println("inn");
+                    if(ny_indeks %2 == 0){
+                        if(ny_indeks==0){
+                            tape += even_total;
+                        }
+                        else if(ny_indeks == 2){
+                            tape+=even_total/2;
+                        }
+                        else{
+                            int to_the_power_of = ny_indeks/2;
+                            tape+= even_total/Math.pow(to_the_power_of,2);
+                        }
+                    }
+                    else{
+                        if(ny_indeks==1){
+                            tape += odd_total/2;
+                        }
+                        else {
+                            int to_the_power_of = ny_indeks+1/2;
+                            tape+= odd_total/Math.pow(to_the_power_of,2);
+                        }
+                    }
                     ny_indeks -- ;
                     paper[ny_indeks]+=1;
                     if(paper[0] == 2){
+                        System.out.println(tape);
                         System.out.println(Arrays.toString(paper));
                         System.out.println("riktig");
                         return 0;
